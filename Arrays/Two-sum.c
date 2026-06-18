@@ -1,24 +1,21 @@
-#include<stdio.h>
-int main(){
-int n;
-printf("ENTER THE SIZE OF THE ARRAY:\n");
-scanf("%d",&n);
-int arr[n];
-printf("enter the elements:\n");
-for(int i=0;i<n;i++){
-scanf("%d",&arr[i]);
-}
-int target;
-printf("ENTER THE TARGET ELEMENT:\n");
-scanf("%d",&target);
-printf("The indices whose elements add up to the target are:\n");
-for(int i=0;i<n;i++){
-for(int j=i+1;j<n;j++){
-if(arr[i]+arr[j]==target){
-printf("[%d %d]",i,j);
-return 0;
-}
-}
-}
-return 0;
+#include <stdio.h>
+
+int main() {
+    int nums[] = {2, 7, 11, 15};
+    int target = 9;
+    int numsSize = sizeof(nums) / sizeof(nums[0]);
+
+    for (int i = 0; i < numsSize; i++) {
+        for (int j = i + 1; j < numsSize; j++) {
+
+            if (nums[i] + nums[j] == target) {
+                printf("Indices: [%d, %d]\n", i, j);
+                return 0;
+            }
+        }
+    }
+
+    printf("No valid pair found.\n");
+
+    return 0;
 }
